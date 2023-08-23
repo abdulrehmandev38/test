@@ -21,11 +21,11 @@ export const ContextProvider = ({ children }) => {
       .then((res) => {
         return res.json();
       })
-      .then(
-        (res) =>
-          !localStorage.getItem("sessionID") &&
-          localStorage.setItem("sessionID", res.id)
-      );
+      .then((res) => {
+        !localStorage.getItem("sessionID") &&
+          localStorage.setItem("sessionID", res.id);
+        console.log(res);
+      });
   }, []);
 
   const handleNotification = ({ type, message }) => {
