@@ -32,11 +32,88 @@ input {
 label {
   font-weight: bold;
 }
+.formItem {
+  display: flex;
+  border: gray solid 2px;
+  padding: 10px 20px;
+  width: 200px;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.notification {
+  position: absolute;
+  display: flex;
+  bottom: 20px;
+  right: 10px;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  border: solid 2px #f1f1f1;
+  border-radius: 7px;
+}
+
+.notification > p {
+  color: white;
+  font-weight: bold;
+  padding: 5px 20px;
+}
+
+.notification > div {
+  color: rgb(235, 233, 233);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 9.5px;
+  font-weight: 900;
+  margin-right: 6px;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: 600;
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  background-color: #1f72d8;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.name {
+  font-weight: bold;
+}
+.sector {
+  color: gray;
+  padding-top: 4px;
+}
+.edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #308dff59;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+.formItemBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 
 .item {
   padding: 5px 15px;
   cursor: pointer;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .item:hover {
   background-color: #f1f1f1;

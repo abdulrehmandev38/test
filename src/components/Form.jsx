@@ -1,7 +1,8 @@
 import Input from "./Input";
 import Select from "./Select";
 
-const Form = ({ data: { name, sector, agree }, onChange }) => {
+const Form = ({ data, onChange, onSubmit }) => {
+  const { name, sector, agree } = data;
   return (
     <form>
       <p>
@@ -9,18 +10,14 @@ const Form = ({ data: { name, sector, agree }, onChange }) => {
         in.
       </p>
       <Input
+        value={data.name}
         onChange={(e) =>
           onChange((data) => ({ ...data, name: e.target.value }))
         }
         name={name}
         label="Name"
       />
-      <Select
-        onChange={(e) =>
-          onChange((data) => ({ ...data, sector: e.target.value }))
-        }
-        sector={sector}
-      />
+      <Select onChange={onChange} value={sector} />
       <div>
         <input
           onChange={(e) =>
@@ -28,11 +25,18 @@ const Form = ({ data: { name, sector, agree }, onChange }) => {
           }
           id="terms"
           type="checkbox"
-          value={agree}
+          checked={agree}
         />
         <label htmlFor="terms">Agree to terms</label>
       </div>
-      <button>Save</button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          onSubmit();
+        }}
+      >
+        Save
+      </button>
     </form>
   );
 };
