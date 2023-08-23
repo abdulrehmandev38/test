@@ -11,13 +11,13 @@ export const ContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/sectors")
+    fetch("https://salahsaadaoui8.pythonanywhere.com/sectors")
       .then((res) => {
         return res.json();
       })
       .then((res) => setSectors(res));
 
-    fetch("http://127.0.0.1:8000/create-session")
+    fetch("https://salahsaadaoui8.pythonanywhere.com/create-session")
       .then((res) => {
         return res.json();
       })

@@ -40,7 +40,7 @@ const Item = ({ id, name, sector }) => {
 const View = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/data", {
+    fetch("https://salahsaadaoui8.pythonanywhere.com/data", {
       method: "GET",
       headers: { "Session-ID": localStorage.getItem("sessionID") },
     })

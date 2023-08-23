@@ -21,7 +21,7 @@ const Edit = () => {
       handleNotification({ type: "error", message: "Please agree to terms" });
       return;
     }
-    fetch(`http://127.0.0.1:8000/update/${param.id}`, {
+    fetch(`https://salahsaadaoui8.pythonanywhere.com/update/${param.id}`, {
       method: "PUT",
       body: JSON.stringify(data),
     })
@@ -33,7 +33,7 @@ const Edit = () => {
   };
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/update/${param.id}`)
+    fetch(`https://salahsaadaoui8.pythonanywhere.com/update/${param.id}`)
       .then((res) => res.json())
       .then((res) => {
         if (res.type)

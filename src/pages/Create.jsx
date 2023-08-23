@@ -26,7 +26,7 @@ const Create = () => {
       handleNotification({ type: "error", message: "Please agree to terms" });
       return;
     }
-    fetch("http://127.0.0.1:8000/create/", {
+    fetch("https://salahsaadaoui8.pythonanywhere.com/create/", {
       method: "POST",
       headers: {
         "Session-ID": localStorage.getItem("sessionID"),
