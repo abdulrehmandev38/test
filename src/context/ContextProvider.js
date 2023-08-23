@@ -17,15 +17,15 @@ export const ContextProvider = ({ children }) => {
       })
       .then((res) => setSectors(res));
 
-    fetch("/create-session")
+    fetch("https://salahsaadaoui8.pythonanywhere.com/create-session")
       .then((res) => {
         return res.json();
       })
-      .then((res) => {
-        !localStorage.getItem("sessionID") &&
-          localStorage.setItem("sessionID", res.id);
-        console.log(res);
-      });
+      .then(
+        (res) =>
+          !localStorage.getItem("sessionID") &&
+          localStorage.setItem("sessionID", res.id)
+      );
   }, []);
 
   const handleNotification = ({ type, message }) => {
