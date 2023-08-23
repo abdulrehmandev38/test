@@ -17,12 +17,7 @@ export const ContextProvider = ({ children }) => {
       })
       .then((res) => setSectors(res));
 
-    fetch("https://salahsaadaoui8.pythonanywhere.com/create-session", {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Request-Headers": "Access-Control-Allow-Origin",
-      },
-    })
+    fetch("/create-session")
       .then((res) => {
         return res.json();
       })
